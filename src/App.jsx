@@ -4,26 +4,17 @@ import AddUser from "./components/AddUser";
 import BillForm from "./components/BillForm";
 
 function App() {
-  const [users, setUsers] = useState([
-    { name: "Fahim", id: 0 },
-    { name: "naim", id: 2 },
-    { name: "Sagor", id: 3 },
-    { name: "Abeer", id: 4 },
-    { name: "Abeer", id: 4 },
-    { name: "Abeer", id: 4 },
-    { name: "Abeer", id: 4 },
-    { name: "Abeer", id: 4 },
-    { name: "Abeer", id: 4 },
-    { name: "Abeer", id: 4 },
-    { name: "Abeer", id: 4 },
-    { name: "Abeer", id: 4 },
-  ]);
+  const [users, setUsers] = useState([]);
+
+  const addUser = (user) => {
+    setUsers([...users, user]);
+  };
 
   return (
     <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 my-24">
       <UserList users={users} />
       <BillForm />
-      <AddUser />
+      <AddUser addUser={addUser} />
     </div>
   );
 }

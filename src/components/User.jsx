@@ -7,7 +7,7 @@ function User({ user }) {
       <div>
         <img
           className="h-12 w-12 rounded-full"
-          src="https://i.pravatar.cc/300"
+          src={user.imgUrl}
           alt="avatar"
         />
       </div>
