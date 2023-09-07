@@ -1,8 +1,9 @@
-function User({ user }) {
+import { RxCross2 } from "react-icons/rx";
+function User({ user, deleteUser }) {
   return (
     <div
-      className="flex items-center space-x-12 hover:bg-orange-100 cursor-pointer 
-    py-4 px-8 rounded-md transition-all duration-150"
+      className="relative flex items-center space-x-6 md:space-x-8 lg:space-x-10 hover:bg-orange-100 cursor-pointer 
+    py-7 px-8 md:px-16 rounded-lg transition-all duration-150"
     >
       <div>
         <img
@@ -22,6 +23,13 @@ function User({ user }) {
         >
           Select
         </button>
+      </div>
+      <div
+        onClick={() => deleteUser(user.id)}
+        className="absolute top-1 md:top-2 right-1 md:right-3 h-6 w-6 rounded-full bg-gray-200 flex justify-center items-center 
+       hover:bg-gray-300 transition-all duration-100"
+      >
+        <RxCross2 />
       </div>
     </div>
   );

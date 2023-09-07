@@ -13,7 +13,7 @@ function AddUser({ addUser }) {
     } else {
       setName("");
       setError("");
-      addUser({ name, imgUrl, id: Math.floor(Math.random * 100) });
+      addUser({ name, imgUrl, id: Math.floor(Math.random() * 100000) });
     }
   };
 

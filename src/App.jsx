@@ -10,9 +10,14 @@ function App() {
     setUsers([...users, user]);
   };
 
+  const deleteUser = (id) => {
+    const newUsers = users.filter((user) => user.id !== id);
+    setUsers([...newUsers]);
+  };
+
   return (
     <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 my-24">
-      <UserList users={users} />
+      <UserList users={users} deleteUser={deleteUser} />
       <BillForm />
       <AddUser addUser={addUser} />
     </div>
