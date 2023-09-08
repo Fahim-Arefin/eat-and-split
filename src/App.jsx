@@ -26,11 +26,10 @@ function App() {
   }, [users]);
 
   const handleSelectedUser = (user) => {
-    // weak logic
     setCounter(counter + 1);
     if (selectedUser?.id !== user.id) {
       setCounter((currentCounter) => {
-        return currentCounter - 1;
+        return 1;
       });
     }
     setSelectedUser(user);
