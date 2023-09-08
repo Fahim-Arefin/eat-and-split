@@ -13,7 +13,12 @@ function AddUser({ addUser }) {
     } else {
       setName("");
       setError("");
-      addUser({ name, imgUrl, id: Math.floor(Math.random() * 100000) });
+      addUser({
+        name,
+        imgUrl,
+        id: Math.floor(Math.random() * 100000),
+        balance: 0,
+      });
     }
   };
 
@@ -54,7 +59,7 @@ function AddUser({ addUser }) {
           <div className="text-end">
             <button
               onClick={() => setShowForm(false)}
-              className="text-slate-700 text-lg font-bold bg-orange-400 px-3 py-1 rounded-md
+              className="text-slate-700 text-lg font-bold border border-orange-400 px-3 py-1 rounded-md
         hover:bg-orange-500 active:bg-orange-400"
             >
               Close
